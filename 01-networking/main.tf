@@ -59,7 +59,7 @@ resource "aws_eip" "eip" {
   
   tags = merge(local.default_tags,
     {
-      "Name" = "${local.name_prefix}-eip"
+      "Name" = "${var.prefix}-eip"
     }
   )
 }
