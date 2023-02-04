@@ -31,7 +31,8 @@ resource "aws_instance" "my_amazon" {
   subnet_id                   = data.terraform_remote_state.public_subnet.outputs.subnet_id
   security_groups             = [aws_security_group.web_sg.id]
   associate_public_ip_address = true
-  #user_data                   = file("${path.module}/install_httpd.sh")
+  iam_instance_profile        = "LabInstanceProfile"
+  user_data                   = file("${path.module}/preparexdocker.sh")
   tags = merge(
     var.default_tags,
     {
