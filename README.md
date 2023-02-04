@@ -1,2 +1,2 @@
-# clo835
-Repository for clo835 assignment 1
+# clo835-a1-terraform
+Repository for the terraform code
