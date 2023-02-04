@@ -52,3 +52,14 @@ resource "aws_route_table_association" "public_route_table_association-1" {
   route_table_id = aws_route_table.public_route_table.id
   subnet_id      = aws_subnet.public_SN1.id
 }
+
+resource "aws_eip" "eip" {
+  vpc        = true
+  depends_on = [aws_internet_gateway.my_igw]
+  
+  tags = merge(local.default_tags,
+    {
+      "Name" = "${local.name_prefix}-eip"
+    }
+  )
+}
