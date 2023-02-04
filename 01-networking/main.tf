@@ -57,9 +57,10 @@ resource "aws_eip" "eip" {
   vpc        = true
   depends_on = [aws_internet_gateway.my_igw]
   
-  tags = merge(local.default_tags,
+  tags = merge(
+    var.default_tags,
     {
-      "Name" = "${var.prefix}-eip"
-    }
+      Name = "${var.prefix}-eip"
+    },
   )
 }
