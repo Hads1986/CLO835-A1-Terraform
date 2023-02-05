@@ -2,7 +2,7 @@
 variable "default_tags" {
   default = {
     "Owner" = "Hector"
-    "App"   = "Web"
+    "App"   = "Tier-2"
   }
   type        = map(any)
   description = "Default tags to be appliad to all AWS resources"
